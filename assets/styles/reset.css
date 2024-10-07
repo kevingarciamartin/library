@@ -37,6 +37,10 @@ button {
     letter-spacing: inherit;
 }
 
+table {
+    font-variant-numeric: tabular-nums;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     :has(:target) {
         scroll-behavior: smooth;
