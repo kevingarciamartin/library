@@ -15,9 +15,10 @@ function Book(title, author, pages, isRead) {
   };
 }
 
-addBookToLibrary("Book 1", "Author 1", "123", false);
+addBookToLibrary("Book 1", "Author 1", "111", false);
 addBookToLibrary("Book 2", "Author 2", "432", true);
 addBookToLibrary("Book 3", "Author 3", "567", false);
+addBookToLibrary("Book 4", "Author 2", "4152", false);
 displayLibrary();
 
 function addBookToLibrary(title, author, pages, isRead) {
@@ -26,7 +27,7 @@ function addBookToLibrary(title, author, pages, isRead) {
 }
 
 function displayLibrary() {
-  const bookList = document.querySelector("#table-body");
+  const bookList = document.querySelector("#book-list");
   myLibrary.forEach((book) => {
     const bookRow = document.createElement("tr");
     const bookTitle = document.createElement("td");
