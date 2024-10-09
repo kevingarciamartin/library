@@ -32,7 +32,7 @@ p {
     text-wrap: pretty;
 }
 
-button {
+button, input[type="submit"] {
     cursor: pointer;
     letter-spacing: inherit;
 }
