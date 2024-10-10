@@ -41,8 +41,10 @@ function displayLibraryInfo() {
   const totalBooks = document.querySelector("#total-books");
   let readCounter = 0;
   let unreadCounter = 0;
+  let totalCounter = 0;
   booksRead.textContent = 0;
   booksUnread.textContent = 0;
+  totalBooks.textContent = 0;
   myLibrary.forEach((book) => {
     if (book.isRead === true) {
       readCounter += 1;
@@ -51,13 +53,13 @@ function displayLibraryInfo() {
       unreadCounter += 1;
       booksUnread.textContent = unreadCounter;
     }
-    totalBooks.textContent = myLibrary.length;
+    totalBooks.textContent = myLibrary.length > 0 ? myLibrary.length : 0;
   });
 }
 
 function displayLibrary() {
   displayLibraryInfo();
-  
+
   const bookList = document.querySelector("#book-list");
   bookList.textContent = "";
   myLibrary.forEach((book) => {
@@ -143,6 +145,7 @@ function displayModal() {
     } else if (target.classList.contains("confirm-removal")) {
       myLibrary = [];
       modal.style.display = "none";
+      displayLibraryInfo();
     }
   });
 }
