@@ -77,25 +77,28 @@
     </aside>
 
     <main>
-      <div id="library-info">
-        <p>Books read: <span id="books-read"></span></p>
-        <p>Books unread: <span id="books-unread"></span></p>
-        <p>Total books: <span id="total-books"></span></p>
-        <button type="button" id="delete-all" class="btn delete-all">Delete all</button>
-      </div>  
-
-      <table>
-        <thead>
-          <tr>
-            <td>Title</td>
-            <td>Author</td>
-            <td>Pages</td>
-            <td>Is Read</td>
-            <td></td>
-          </tr>
-        </thead>
-        <tbody id="book-list"></tbody>
-      </table>
+      <div class="main-container">
+        <div id="library-info">
+          <p>Books read: <span id="books-read"></span></p>
+          <p>Books unread: <span id="books-unread"></span></p>
+          <p>Total books: <span id="total-books"></span></p>
+          <button type="button" id="delete-all" class="btn delete-all">
+            Delete all
+          </button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <td>Title</td>
+              <td>Author</td>
+              <td>Pages</td>
+              <td>Is Read</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+      </div>
 
       <!-- MODAL -->
       <div id="modal" class="close">
@@ -107,8 +110,12 @@
           <div class="modal-content">
             <p>Do you really want to delete all the books from your library?</p>
             <div class="modal-options">
-              <button type="button" class="btn cancel-removal close">Cancel</button>
-              <button type="button" class="btn confirm-removal delete-all">Delete all</button>
+              <button type="button" class="btn cancel-removal close">
+                Cancel
+              </button>
+              <button type="button" class="btn confirm-removal delete-all">
+                Delete all
+              </button>
             </div>
           </div>
         </div>
