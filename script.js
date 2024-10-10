@@ -1,5 +1,18 @@
 let myLibrary = [];
 
+const preselectedBooks = [
+  new Book("Moby Dick", "Herman Melville", 550, false),
+  new Book("Pride and Prejudice", "Jane Austen", 400, false),
+  new Book("Charleston", "Zelda Fitzgerald", 348, false),
+  new Book("Matilda", "Mary Shelley", 249, false),
+  new Book("Candide", "Voltaire", 307, false),
+  new Book("Genius", "Artur Rimbaud", 271, false),
+  new Book("Orlando ", "Virginia Woolf", 263, false),
+  new Book("Dr Jekyll and Mr Hyde", "Robert Louis Stevenson", 163, false),
+  new Book("The Great Gatsby", "F. Scott Fitzgerald", 384, false),
+  new Book("Dorian Grays Portrait", "Oscar Wilde", 292, false),
+];
+
 addBookToLibrary("Book 1", "Author 1", 111, false);
 addBookToLibrary("Book 2", "Author 2", 432, true);
 addBookToLibrary("Book 3", "Author 3", 567, false);
@@ -145,6 +158,10 @@ function handleClick() {
       validateForm(event);
     } else if (target.id === "delete-all") {
       displayModal();
+    } else if (target.id === "add-preselected-books") {
+      preselectedBooks.forEach((book) => {
+        myLibrary.push(book);
+      });
     } else if (target.classList.contains("fa-circle-check")) {
       target.classList.remove("fa-circle-check");
       myLibrary[bookIndex].isRead = false;
