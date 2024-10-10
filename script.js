@@ -63,19 +63,52 @@ function displayLibrary() {
   });
 }
 
-// function validateForm(event) {
-//   event.preventDefault();
+function validateForm(event) {
+  event.preventDefault();
+  const form = document.querySelector("form");
+  const titleInput = document.querySelector("#title");
+  const titleError = document.querySelector(".title");
+  const authorInput = document.querySelector("#author");
+  const authorError = document.querySelector(".author");
+  const pagesInput = document.querySelector("#pages");
+  const pagesError = document.querySelector(".pages");
+  const isReadInput = document.querySelector("#is-read");
 
-// }
+  titleError.style.display = titleInput.value === "" ? "block" : "none";
+  authorError.style.display = authorInput.value === "" ? "block" : "none";
+  if (
+    pagesInput.value === "" ||
+    pagesInput.value.match(/[^1-9]/) ||
+    pagesInput.value <= 0
+  ) {
+    pagesError.style.display = "block";
+  } else {
+    pagesError.style.display = "none";
+  }
+  if (
+    titleInput.value !== "" &&
+    authorInput.value !== "" &&
+    pagesInput.value !== "" &&
+    pagesInput.value > 0
+  ) {
+    const isRead = isReadInput.checked ? true : false;
+    addBookToLibrary(
+      titleInput.value,
+      authorInput.value,
+      pagesInput.value,
+      isRead
+    );
+    form.reset();
+  }
+}
 
 function handleClick() {
   document.addEventListener("click", (event) => {
     const { target } = event;
     const bookIndex = target.parentNode.parentNode.parentNode.rowIndex - 1;
-    if (target.id === "add.book") {
+    if (target.id === "add-book") {
       validateForm(event);
     } else if (target.classList.contains("fa-circle-check")) {
-      console.log("CHECK");
       target.classList.remove("fa-circle-check");
       myLibrary[bookIndex].isRead = false;
     } else if (target.classList.contains("fa-circle-xmark")) {
