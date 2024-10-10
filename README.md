@@ -1,1 +1,14 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7H1G_pH_)
+# Library
+A small Library app, created with HTML, CSS and JavaScript.
+
+Live preview of the project is [here](https://kevingarciamartin.github.io/library/).
+
+### Overview
+Features:
+  - You can add a book
+  - You can add 10 preselected books at once
+  - Before addig a book, you can mark if it's already read or not
+  - You can change book status after addition
+  - You can delete a particular book
+  - You can delete all books at once
+  - There is a modal to confirm or cancel complete books removal
