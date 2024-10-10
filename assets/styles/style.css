@@ -142,9 +142,15 @@ main {
 
   #library-info {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     width: 100%;
+
+    div {
+      display: flex;
+      gap: 0.5rem;
+    }
   }
 
   table {
