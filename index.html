@@ -4,25 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/styles/reset.css" />
+    <link rel="stylesheet" href="assets/styles/fonts.css" />
     <link rel="stylesheet" href="assets/styles/style.css" />
     <script src="https://kit.fontawesome.com/2ed5d43c8b.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
     <title>Library</title>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <td>Title</td>
-          <td>Author</td>
-          <td>Pages</td>
-          <td>Is Read</td>
-          <td></td>
-        </tr>
-      </thead>
-      <tbody id="book-list">
+    <aside>
+      <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <title>bookshelf</title>
+          <path
+            d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+          />
+        </svg>
+        Library
+      </h1>
+      <form>
+        <fieldset>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Book title"
+            required
+          />
+          <label for="title"><span>What is the title of the book?</span></label>
+          <div class="validation-block">
+            <p class="validation-text title">Please fill out this field.</p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Author name"
+            required
+          />
+          <label for="author"
+            ><span>Who is the author of the book?</span></label
+          >
+          <div class="validation-block">
+            <p class="validation-text author">Please fill out this field.</p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <input
+            type="number"
+            name="pages"
+            id="pages"
+            placeholder="Number of pages"
+            required
+          />
+          <label for="pages"
+            ><span>How many pages are there in the book?</span></label
+          >
+          <div class="validation-block">
+            <p class="validation-text pages">Please fill out this field.</p>
+          </div>
+        </fieldset>
+        <input type="button" value="Add a new book" id="add-book">
+      </form>
+    </aside>
 
-      </tbody>
-    </table>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Pages</td>
+            <td>Is Read</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </main>
   </body>
 </html>
