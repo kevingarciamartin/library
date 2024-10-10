@@ -1,3 +1,11 @@
+:root {
+  --clr-green: green;
+  --clr-red: crimson;
+
+  --clr-success: var(--clr-green);
+  --clr-error: var(--clr-red);
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -32,7 +40,7 @@ aside {
   form {
     display: grid;
 
-    fieldset {
+    fieldset:not(:has(input[type="checkbox"])) {
       display: inline-grid;
 
       label {
@@ -41,6 +49,17 @@ aside {
 
       input {
         order: 2;
+      }
+
+      .validation-block {
+        order: 3;
+        height: 1em;
+
+        .validation-text {
+          display: none;
+          color: var(--clr-error);
+          font-size: 0.75rem;
+        }
       }
 
       input[required] + label span:first-of-type::after {
@@ -73,11 +92,11 @@ main {
         border: none;
 
         .fa-circle-check {
-          color: green;
+          color: var(--clr-success);
         }
 
         .fa-circle-xmark {
-          color:crimson;
+          color:var(--clr-error);
         }
       }
 
