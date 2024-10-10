@@ -1,13 +1,10 @@
 *, *::before, *::after {
     box-sizing: border-box;
-}
-
-* {
     font-family: inherit;
 }
 
 html {
-    color-scheme: dark light;
+    /* color-scheme: dark light; */
     hanging-punctuation: first last;
 }
 
