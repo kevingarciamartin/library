@@ -29,7 +29,7 @@ p {
     text-wrap: pretty;
 }
 
-button, input[type="submit"], input[type="button"] {
+button, input:is([type="submit"], [type="button"], [type="checkbox"]) {
     cursor: pointer;
     letter-spacing: inherit;
 }
