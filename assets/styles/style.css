@@ -127,6 +127,8 @@ aside {
 }
 
 main {
+  display: flex;
+  justify-content: center;
   padding: calc(var(--_body-padding) * 1.5) var(--_body-padding)
     var(--_body-padding);
 
@@ -137,7 +139,7 @@ main {
     gap: 2rem;
     flex-direction: column;
 
-    width: min(50rem, 70vw);
+    width: min(75ch, 50vw);
   }
 
   #library-info {
