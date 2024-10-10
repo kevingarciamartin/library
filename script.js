@@ -4,6 +4,7 @@ addBookToLibrary("Book 1", "Author 1", 111, false);
 addBookToLibrary("Book 2", "Author 2", 432, true);
 addBookToLibrary("Book 3", "Author 3", 567, false);
 addBookToLibrary("Book 4", "Author 2", 4152, false);
+displayLibraryInfo();
 displayLibrary();
 handleClick();
 
@@ -24,6 +25,26 @@ function Book(title, author, pages, isRead) {
 function addBookToLibrary(title, author, pages, isRead) {
   const book = new Book(title, author, pages, isRead);
   myLibrary.push(book);
+}
+
+function displayLibraryInfo() {
+  const booksRead = document.querySelector("#books-read");
+  const booksUnread = document.querySelector("#books-unread");
+  const totalBooks = document.querySelector("#total-books");
+  let readCounter = 0;
+  let unreadCounter = 0;
+  booksRead.textContent = 0;
+  booksUnread.textContent = 0;
+  myLibrary.forEach((book) => {
+    if (book.isRead === true) {
+      readCounter += 1;
+      booksRead.textContent = readCounter;
+    } else if (book.isRead === false) {
+      unreadCounter += 1;
+      booksUnread.textContent = unreadCounter;
+    }
+    totalBooks.textContent = myLibrary.length;
+  });
 }
 
 function displayLibrary() {
