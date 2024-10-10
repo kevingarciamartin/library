@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 addBookToLibrary("Book 1", "Author 1", 111, false);
 addBookToLibrary("Book 2", "Author 2", 432, true);
@@ -102,12 +102,28 @@ function validateForm(event) {
   }
 }
 
+function displayModal() {
+  const modal = document.querySelector("#modal");
+  modal.style.display = "block";
+  modal.addEventListener("click", (event) => {
+    const { target } = event;
+    if (target.classList.contains("close")) {
+      modal.style.display = "none";
+    } else if (target.classList.contains("confirm-removal")) {
+      myLibrary = [];
+      modal.style.display = "none";
+    }
+  });
+}
+
 function handleClick() {
   document.addEventListener("click", (event) => {
     const { target } = event;
     const bookIndex = target.parentNode.parentNode.parentNode.rowIndex - 1;
     if (target.id === "add-book") {
       validateForm(event);
+    } else if (target.id === "delete-all") {
+      displayModal();
     } else if (target.classList.contains("fa-circle-check")) {
       target.classList.remove("fa-circle-check");
       myLibrary[bookIndex].isRead = false;
