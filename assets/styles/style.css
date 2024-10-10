@@ -25,7 +25,8 @@
   border-radius: 3px;
   transition: background-color 200ms ease;
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     background-color: #eaeaea;
   }
 }
@@ -34,7 +35,8 @@
   color: var(--clr-neutral-100);
   background-color: var(--clr-red-400);
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     background-color: var(--clr-red-600);
   }
 }
@@ -120,7 +122,8 @@ aside {
     margin-top: 1rem;
     padding: 1em;
 
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       background-color: hsl(from var(--clr-accent) h s l / 0.8);
     }
   }
@@ -164,7 +167,7 @@ main {
     td {
       padding: 0.5rem 1rem;
     }
-    
+
     thead {
       color: var(--clr-neutral-100);
       background-color: var(--clr-accent);
@@ -199,26 +202,29 @@ main {
         .fa-circle-check {
           color: var(--clr-success);
           transition: color 200ms ease;
-          
-          &:hover, &:focus-visible {
+
+          &:hover,
+          &:focus-visible {
             color: var(--clr-success-dark);
           }
         }
-        
+
         .fa-circle-xmark {
           color: var(--clr-error);
           transition: color 200ms ease;
-          
-          &:hover, &:focus-visible {
+
+          &:hover,
+          &:focus-visible {
             color: var(--clr-error-dark);
           }
         }
-        
+
         .fa-trash-can {
           color: var(--clr-neutral-500);
           transition: color 200ms ease;
 
-          &:hover, &:focus-visible {
+          &:hover,
+          &:focus-visible {
             color: var(--clr-neutral-800);
           }
         }
