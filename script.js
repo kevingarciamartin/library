@@ -13,11 +13,6 @@ const preselectedBooks = [
   new Book("Dorian Grays Portrait", "Oscar Wilde", 292, false),
 ];
 
-addBookToLibrary("Book 1", "Author 1", 111, false);
-addBookToLibrary("Book 2", "Author 2", 432, true);
-addBookToLibrary("Book 3", "Author 3", 567, false);
-addBookToLibrary("Book 4", "Author 2", 4152, false);
-displayLibraryInfo();
 displayLibrary();
 handleClick();
 
@@ -61,6 +56,8 @@ function displayLibraryInfo() {
 }
 
 function displayLibrary() {
+  displayLibraryInfo();
+  
   const bookList = document.querySelector("#book-list");
   bookList.textContent = "";
   myLibrary.forEach((book) => {
